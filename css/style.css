@@ -10,6 +10,13 @@ body {
   margin-left: 0 auto; margin-right: 0 auto;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .top20 {
   margin-top: 20px;
 }
