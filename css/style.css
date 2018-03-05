@@ -1,3 +1,11 @@
 body {
-  background-color: #d3d3d3;
+  margin-top: 20px;
+}
+
+.bottom70 {
+  margin-bottom: 70px;
+}
+
+.centered {
+  margin-left: 0 auto; margin-right: 0 auto;
 }
