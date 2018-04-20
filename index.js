@@ -23,7 +23,7 @@ function updateOutput(){
     var out = form.elements["output"];
 
     if (isNaN(v)){                          //in the absence of velocity
-        alert('The displacement is '[(vi*t)+0.5*(a*t**2)]+'m.');
+        alert('The displacement is '+[(vi*t)+0.5*(a*t**2)]+'m.');
       }
     else if (isNaN(dx)){                    //in the absence of displacement
         alert('The velocity is '+[vi+(a*t)]+'m/s.');
