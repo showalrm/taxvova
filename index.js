@@ -22,16 +22,16 @@ function updateOutput(){
     var a = parseFloat(form.elements["accel"].value);
     var out = form.elements["output"];
 
-    if (isNaN(v)){                          //in the absence of velocity
+    if (isNaN(v)){                     //in the absence of velocity
         alert('The displacement is '+[(vi*t)+0.5*(a*t**2)]+'m.');
       }
-    else if (isNaN(dx)){                    //in the absence of displacement
+    if (isNaN(dx)){                    //in the absence of displacement
         alert('The velocity is '+[vi+(a*t)]+'m/s.');
       }
-    else if (isNaN(a)){                     //in the absence of acceleration
+    if (isNaN(a)){                     //in the absence of acceleration
         alert('The displacement is '+[0.5*(vi + v)*t]+'m.');
       }
-    else if (isNaN(t)){                     //in the absence of time
+    if (isNaN(t)){                     //in the absence of time
         alert('The velocity is '+[Math.sqrt(vi**2+2*a*dx)]+'m/s.');
       }
   };
