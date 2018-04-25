@@ -32,9 +32,9 @@ function updateOutput(){
             vi = [(dx)/(t+.5(a(t**2)))];
             alert('The initial velocity is '+vi+'m/s.')
         }
-        else if (isNaN(v)){             //find velocity
-            v = [(vi*t)+0.5*(a*t**2)];
-            alert('The displacement is '+v+'m.');
+        else if (isNaN(dx)){             //find displacement
+            dx = [(vi*t)+0.5*(a*t**2)];
+            alert('The displacement is '+dx+'m.');
         }
         else if (isNaN(t)){             //find time
             var t1 = [(-vi+Math.sqrt((vi**2)+2(a)(dx)))/a];
