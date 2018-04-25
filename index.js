@@ -22,23 +22,23 @@ function updateOutput(){
     var a = parseFloat(form.elements["accel"].value);
     var out = form.elements["output"];
 
-   if (isNaN(v)){                       //in the absence of velocity
+    if (isNaN(v)){                      //in the absence of velocity
 
         if (isNaN(a)){                  //find acceleration
-            a = [(dx)/(vi+0.5*(t**2))];
-            alert('The acceleration is '+a+'m/s².');
+            var an = [(dx)/(vi+0.5*t**2)];
+            alert('The acceleration is '+an+'m/s².');
         }
         else if (isNaN(vi)){            //find initial velocity
-            vi = [(dx)/(t+0.5*(a(t**2)))];
-            alert('The initial velocity is '+vi+'m/s.')
+            var vin = [(dx)/(t+0.5*a*t**2)];
+            alert('The initial velocity is '+vin+'m/s.')
         }
         else if (isNaN(dx)){             //find displacement
-            dx = [(vi*t)+0.5*(a*t**2)];
-            alert('The displacement is '+dx+'m.');
+            var dxn = [(vi*t)+(0.5*a*t**2)];
+            alert('The displacement is '+dxn+'m.');
         }
         else if (isNaN(t)){             //find time
-            var t1 = [(-vi+Math.sqrt((vi**2)+2*(a)*(dx)))/a];
-            var t2 = [(-vi-Math.sqrt((vi**2)+2*(a)*(dx)))/a];
+            var t1 = [(-vi+Math.sqrt((vi**2)+2*a*dx))/a];
+            var t2 = [(-vi-Math.sqrt((vi**2)+2*a*dx))/a];
             if (t1>=0 && t2>=0){
                 alert('The time is both '+t1+'s and '+t2+'s; choose wisely.');
             }
@@ -54,59 +54,59 @@ function updateOutput(){
     if (isNaN(dx)){                     //in the absence of displacement
         
         if (isNaN(a)){                  //find acceleration
-            a = [1/(vi+t-vi)];
-            alert('The acceleration is '+a+'m/s².');
+            var an = [1/(vi+t-vi)];
+            alert('The acceleration is '+an+'m/s².');
         }
         else if (isNaN(vi)){            //find initial velocity
-            vi = [v-(a*t)];
-            alert('The initial velocity is '+vi+'m/s.');
+            var vin = [v-(a*t)];
+            alert('The initial velocity is '+vin+'m/s.');
         }
         else if (isNaN(v)){             //find velocity
-            v = [vi+(a*t)];
-            alert('The velocity is '+v+'m/s.');
+            var vn = [vi+(a*t)];
+            alert('The velocity is '+vn+'m/s.');
         }
         else if (isNaN(t)){             //find time
-            t = [1/(vi+a-v)];
-            alert('The time is '+t+'s.');
+            var tn = [1/(vi+a-v)];
+            alert('The time is '+tn+'s.');
         }
       }
 
     if (isNaN(a)){                      //in the absence of acceleration
         
         if (isNaN(vi)){                 //find initial velocity
-            vi = [(2*t*dx)-v];
-            alert('The initial velocity is '+vi+'m/s.');
+            var vin = [(2*t*dx)-v];
+            alert('The initial velocity is '+vin+'m/s.');
         }
         else if (isNaN(v)){             //find velocity
-            v = [(2*t*dx)-vi];
-            alert('The velocity is '+v+'m/s.');
+            var vn = [(2*t*dx)-vi];
+            alert('The velocity is '+vn+'m/s.');
         }
         else if (isNaN(t)){             //find time
-            t = [(2*(dx))/(v+vi)];
-            alert('The time is '+t+'m/s.');
+            var tn = [(2*dx)/(v+vi)];
+            alert('The time is '+tn+'m/s.');
         }
         else if (isNaN(dx)){            //find displacement
-            dx = [0.5*(vi+v)*t];
-            alert('The displacement is '+dx+'m.');
+            var dxn = [0.5*(vi+v)*t];
+            alert('The displacement is '+dxn+'m.');
         }
       }
     if (isNaN(t)){                      //in the absence of time
         
         if (isNaN(a)){                  //find acceleration
-            a = [(v**2-vi**2)/(2*dx)];
-            alert('The acceleration is '+a+'m/s².');
+            var an = [(v**2-vi**2)/(2*dx)];
+            alert('The acceleration is '+an+'m/s².');
         }
         else if (isNaN(vi)){            //find initial velocity
-            vi = [Math.sqrt(v**2-2*a*dx)];
-            alert('The initial velocity is '+vi+'m/s.');
+            var vin = [Math.sqrt(v**2-2*a*dx)];
+            alert('The initial velocity is '+vin+'m/s.');
         }
         else if (isNaN(v)){             //find velocity
-            v = [Math.sqrt(vi**2+2*a*dx)];
-            alert('The velocity is '+v+'m/s.');
+            var vn = [Math.sqrt(vi**2+2*a*dx)];
+            alert('The velocity is '+vn+'m/s.');
         }
         else if (isNaN(dx)){            //find displacement
-            dx = [(v**2-vi**2)/2*a];
-            alert('The displacement is '+dx+'m.');
+            var dxn = [(v**2-vi**2)/2*a];
+            alert('The displacement is '+dxn+'m.');
         }
       }
   };
