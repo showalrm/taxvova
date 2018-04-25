@@ -90,6 +90,7 @@ function updateOutput(){
             alert('The displacement is '+dxn+'m.');
         }
       }
+    
     if (isNaN(t)){                      //in the absence of time
         
         if (isNaN(a)){                  //find acceleration
@@ -109,4 +110,20 @@ function updateOutput(){
             alert('The displacement is '+dxn+'m.');
         }
       }
-  };
+    
+      if (isNaN(vi) && isNaN(a)){       //in the absence of initial velocity and acceleration
+
+        if (isNaN(v)){                  //find velocity
+            var vn = [dx/t];
+            alert('The velocity is '+vn+'m/s.');
+        }
+        else if (isNaN(dx)){            //find displacement
+            var dxn = [v*t];
+            alert('The displacement is '+dxn+'m.');
+        }
+        else if (isNaN(t)){             //find time
+            var tn = [dx/v];
+            alert('The time is '+tn+'s.');
+        }
+    }
+};
