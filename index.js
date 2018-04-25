@@ -34,7 +34,7 @@ function updateOutput(){
         }
         else if (isNaN(dx)){             //find displacement
             dx = [(vi*t)+0.5*(a*t**2)];
-            alert('The displacement is '+v+'m.');
+            alert('The displacement is '+dx+'m.');
         }
         else if (isNaN(t)){             //find time
             var t1 = [(-vi+Math.sqrt((vi**2)+2*(a)*(dx)))/a];
