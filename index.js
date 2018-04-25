@@ -83,7 +83,7 @@ function updateOutput(){
         }
         else if (isNaN(t)){             //find time
             var tn = [(2*dx)/(v+vi)];
-            alert('The time is '+tn+'m/s.');
+            alert('The time is '+tn+'s.');
         }
         else if (isNaN(dx)){            //find displacement
             var dxn = [0.5*(vi+v)*t];
