@@ -52,7 +52,13 @@
                <option value="-10">
             </datalist>
             <br>
-            <input type="submit" class="btn btn-primary"><br>
+            <input type="submit" class="btn btn-primary"><button onclick="reBtn" class="btn btn-success">Clear Values</button>
+            <script>
+              function reBtn() {
+              location.reload(true);
+              }
+            </script>
+            <br>
             <output class="top20" id="output" name="output"></output>
           </form>
         </div>
