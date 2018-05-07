@@ -28,19 +28,19 @@ function updateOutput(){
             var an = [(dx)/(vi+0.5*t**2)];
             if(isFinite(an)){
                 alert('The acceleration is '+an+'m/s².');
-            };
+            }
         }
         else if (isNaN(vi)){            //find initial velocity
             var vin = [(dx)/(t+0.5*a*t**2)];
             if(isFinite(vin)){
                 alert('The initial velocity is '+vin+'m/s.');
-            };
+            }
         }
         else if (isNaN(dx)){             //find displacement
             var dxn = [(vi*t)+(0.5*a*t**2)];
             if(isFinite(dxn)){
                 alert('The displacement is '+dxn+'m.');
-            };
+            }
         }
         else if (isNaN(t)){             //find time
             var t1 = [(-vi+Math.sqrt.abs((vi**2)+2*a*dx))/a];
@@ -63,25 +63,25 @@ function updateOutput(){
             var an = [(v-vi)/t];
             if (isFinite(an)){
                 alert('The acceleration is '+an+'m/s².');
-            };
+            }
         }
         else if (isNaN(vi)){            //find initial velocity
             var vin = [v-(a*t)];
             if (isFinite(vin)){
                 alert('The initial velocity is '+vin+'m/s.');
-            };
+            }
         }
         else if (isNaN(v)){             //find velocity
             var vn = [vi+(a*t)];
             if (isFinite(vn)){
                 alert('The velocity is '+vn+'m/s.');
-            };
+            }
         }
         else if (isNaN(t)){             //find time
             var tn = [(v-vi)/a];
             if (isFinite(tn)){
                 alert('The time is '+tn+'s.');
-            };
+            }
         }
     }    
 
@@ -91,25 +91,25 @@ function updateOutput(){
             var vin = [(2*t*dx)-v];
             if (isFinite(vin)){
                 alert('The initial velocity is '+vin+'m/s.');
-            };
+            }
         }
         else if (isNaN(v)){             //find velocity
             var vn = [(2*t*dx)-vi];
             if (isFinite(vn)){
                 alert('The velocity is '+vn+'m/s.');
-            };
+            }
         }
         else if (isNaN(t)){             //find time
             var tn = [(2*dx)/(v+vi)];
             if (isFinite(tn)){
                 alert('The time is '+tn+'s.');
-            };
+            }
         }
         else if (isNaN(dx)){            //find displacement
             var dxn = [0.5*(vi+v)*t];
             if (isFinite(dxn)){
                 alert('The displacement is '+dxn+'m.');
-            };
+            }
         }
     }
         
@@ -119,25 +119,25 @@ function updateOutput(){
             var an = [(v**2-vi**2)/(2*dx)];
             if (isFinite(an)){
                 alert('The acceleration is '+an+'m/s².');
-            };
+            }
         }
         else if (isNaN(vi)){            //find initial velocity
-            var vin = [Math.sqrt(v**2-2*a*dx)];
+            var vin = [Math.sqrt.abs(v**2-2*a*dx)];
             if (isFinite(vin)){
                 alert('The initial velocity is '+vin+'m/s.');
-            };
+            }
         }
         else if (isNaN(v)){             //find velocity
-            var vn = [Math.sqrt(vi**2+2*a*dx)];
+            var vn = [Math.sqrt.abs(vi**2+2*a*dx)];
             if (isFinite(vn)){
                 alert('The velocity is '+vn+'m/s.');
-            };
+            }
         }
         else if (isNaN(dx)){            //find displacement
             var dxn = [(v**2-vi**2)/2*a];
             if (isFinite(dxn)){
                 alert('The displacement is '+dxn+'m.');
-            };
+            }
         }
     }
         
@@ -147,19 +147,19 @@ function updateOutput(){
             var vn = [dx/t];
             if (isFinite(vn)){
                 alert('The velocity is '+vn+'m/s.');
-            };
+            }
         }
         else if (isNaN(dx)){            //find displacement
             var dxn = [v*t];
             if (isFinite(dxn)){
                 alert('The displacement is '+dxn+'m.');
-            };
+            }
         }
         else if (isNaN(t)){             //find time
             var tn = [dx/v];
             if (isFinite(tn)){
                 alert('The time is '+tn+'s.');
-            };
+            }
         }
     }
 };
