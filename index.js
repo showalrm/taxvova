@@ -26,39 +26,34 @@ function updateOutput(){
 
         if (isNaN(a)){                  //find acceleration
             var an = [(dx)/(vi+0.5*t**2)];
-            var anr = Math.round(an * 0.001)/0.001;
-            if(isFinite(anr)){
-                form.elements["accel"].value = anr;
+            if(isFinite(an)){
+                form.elements["accel"].value = an;
             }
         }
         else if (isNaN(vi)){            //find initial velocity
             var vin = [(dx)/(t+0.5*a*t**2)];
-            var vinr = Math.round(vin * 0.001)/0.001;
-            if(isFinite(vinr)){
-                form.elements["vel0"].value = vinr;
+            if(isFinite(vin)){
+                form.elements["vel0"].value = vin;
             }
         }
         else if (isNaN(dx)){             //find displacement
             var dxn = [(vi*t)+(0.5*a*t**2)];
-            var dxnr = Math.round(dxn * 0.001)/0.001;
-            if(isFinite(dxnr)){
-                form.elements["displace"].value = dxnr;
+            if(isFinite(dxn)){
+                form.elements["displace"].value = dxn;
             }
         }
         else if (isNaN(t)){             //find time
             var t1 = [(-vi+Math.sqrt.abs((vi**2)+2*a*dx))/a];
-            var t1r = Math.round(t1 * 0.001)/0.001;
             var t2 = [(-vi-Math.sqrt.abs((vi**2)+2*a*dx))/a];
-            var t2r = Math.round(t2 * 0.001)/0.001;
             if (t1>=0 && t2>=0){
-                form.elements["time"].value = t1r;
+                form.elements["time"].value = t1;
             }
             else if (t1>=0){
-                form.elements["time"].value = t2r;
+                form.elements["time"].value = t2;
             }
             else if (t2>=0){
                 form.elements["time"].type = text;
-                var ttext = t1r + " or " + t2r + " choose wisely.";
+                var ttext = t1 + " or " + t2 + " choose wisely.";
                 form.elements["time"].value = ttext;
             }
         }                
@@ -68,30 +63,26 @@ function updateOutput(){
             
         if (isNaN(a)){                  //find acceleration
             var an = [(v-vi)/t];
-            var anr = Math.round(an * 0.001)/0.001;
-            if (isFinite(anr)){
-                form.elements["accel"].value = anr;
+            if (isFinite(an)){
+                form.elements["accel"].value = an;
             }
         }
         else if (isNaN(vi)){            //find initial velocity
             var vin = [v-(a*t)];
-            var vinr = Math.round(vin * 0.001)/0.001;
-            if (isFinite(vinr)){
-                form.elements["vel0"].value = vinr;
+            if (isFinite(vin)){
+                form.elements["vel0"].value = vin;
             }
         }
         else if (isNaN(v)){             //find velocity
             var vn = [vi+(a*t)];
-            var vnr = Math.round(vn * 0.001)/0.001;
-            if (isFinite(vnr)){
-                form.elements["vel"].value = vnr;
+            if (isFinite(vn)){
+                form.elements["vel"].value = vn;
             }
         }
         else if (isNaN(t)){             //find time
             var tn = [(v-vi)/a];
-            var tnr = Math.round(tn * 0.001)/0.001;
-            if (isFinite(tnr)){
-                form.elements["time"].value = tnr;
+            if (isFinite(tn)){
+                form.elements["time"].value = tn;
             }
         }
     }    
@@ -100,30 +91,26 @@ function updateOutput(){
             
         if (isNaN(vi)){                 //find initial velocity
             var vin = [(2*t*dx)-v];
-            var vinr = Math.round(vin * 0.001)/0.001;
-            if (isFinite(vinr)){
-                form.elements["vel0"].value = vinr;
+            if (isFinite(vin)){
+                form.elements["vel0"].value = vin;
             }
         }
         else if (isNaN(v)){             //find velocity
             var vn = [(2*t*dx)-vi];
-            var vnr = Math.round(vn * 0.001)/0.001;
-            if (isFinite(vnr)){
-                form.elements["vel"].value = vnr;
+            if (isFinite(vn)){
+                form.elements["vel"].value = vn;
             }
         }
         else if (isNaN(t)){             //find time
             var tn = [(2*dx)/(v+vi)];
-            var tnr = Math.round(tn * 0.001)/0.001;
-            if (isFinite(tnr)){
-                form.elements["time"].value = tnr;
+            if (isFinite(tn)){
+                form.elements["time"].value = tn;
             }
         }
         else if (isNaN(dx)){            //find displacement
             var dxn = [0.5*(vi+v)*t];
-            var dxnr = Math.round(dxn * 0.001)/0.001;
-            if (isFinite(dxnr)){
-                form.elements["displace"].value = dxnr;
+            if (isFinite(dxn)){
+                form.elements["displace"].value = dxn;
             }
         }
     }
@@ -132,30 +119,26 @@ function updateOutput(){
             
         if (isNaN(a)){                  //find acceleration
             var an = [(v**2-vi**2)/(2*dx)];
-            var anr = Math.round(an * 0.001)/0.001;
-            if (isFinite(anr)){
-                form.elements["accel"].value = anr;
+            if (isFinite(an)){
+                form.elements["accel"].value = an;
             }
         }
         else if (isNaN(vi)){            //find initial velocity
             var vin = [Math.sqrt.abs(v**2-2*a*dx)];
-            var vinr = Math.round(vin * 0.001)/0.001;
-            if (isFinite(vinr)){
-                form.elements["vel0"].value = vinr;
+            if (isFinite(vin)){
+                form.elements["vel0"].value = vin;
             }
         }
         else if (isNaN(v)){             //find velocity
             var vn = [Math.sqrt.abs(vi**2+2*a*dx)];
-            var vnr = Math.round(vn * 0.001)/0.001;
-            if (isFinite(vnr)){
-                form.elements["vel"].value = vnr;
+            if (isFinite(vn)){
+                form.elements["vel"].value = v;
             }
         }
         else if (isNaN(dx)){            //find displacement
             var dxn = [(v**2-vi**2)/2*a];
-            var dxnr = Math.round(dxn * 0.001)/0.001;
-            if (isFinite(dxnr)){
-                form.elements["displace"].value = dxnr;
+            if (isFinite(dxn)){
+                form.elements["displace"].value = dxn;
             }
         }
     }
@@ -164,23 +147,20 @@ function updateOutput(){
 
         if (isNaN(v)){                  //find velocity
             var vn = [dx/t];
-            var vnr = Math.round(vn * 0.001)/0.001;
-            if (isFinite(vnr)){
-                form.elements["vel"].value = vnr;
+            if (isFinite(vn)){
+                alert('The velocity is '+vn+'m/s.');
             }
         }
         else if (isNaN(dx)){            //find displacement
             var dxn = [v*t];
-            var dxnr = Math.round(dxn * 0.001)/0.001;
-            if (isFinite(dxnr)){
-                form.elements["displace"].value = dxnr;
+            if (isFinite(dxn)){
+                form.elements["displace"].value = dxn;
             }
         }
         else if (isNaN(t)){             //find time
             var tn = [dx/v];
-            var tnr = Math.round(tn * 0.001)/0.001;
-            if (isFinite(tnr)){
-                form.elements["time"].value = tnr;
+            if (isFinite(tn)){
+                form.elements["time"].value = tn;
             }
         }
     }
