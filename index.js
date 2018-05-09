@@ -100,7 +100,7 @@ function updateOutput(){
     if (isNaN(a)){                      //in the absence of acceleration
             
         if (isNaN(vi)){                 //find initial velocity
-            var vin = [(2*t*dx)-v];
+            var vin = [((2*dx)/t)-v];
             var vin = Math.round(vin*1000)/1000;
             if (isFinite(vin)){
                 form.elements["vel0"].value = vin;
