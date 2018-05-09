@@ -20,9 +20,8 @@ function updateOutput(){
     var vi = parseFloat(form.elements["vel0"].value);
     var v = parseFloat(form.elements["vel"].value);
     var a = parseFloat(form.elements["accel"].value);
-    var out = form.elements["output"];
 
-        if (isNaN(v)){                      //in the absence of velocity
+    if (isNaN(v)){                      //in the absence of velocity
 
         if (isNaN(a)){                  //find acceleration
             var an = [(dx)/(vi+0.5*t**2)];
@@ -51,15 +50,16 @@ function updateOutput(){
             var t2 = [(-vi-Math.sqrt.abs((vi**2)+2*a*dx))/a];
             var t2 = Math.round(an*1000)/1000;
             if (t1>=0 && t2>=0){
-                form.elements["time"].value = t1;
+                form.elements["time"].type = text;
+                var ttext = t1 + " or " + t2 + "; choose wisely.";
+                form.elements["time"].value = ttext;
             }
             else if (t1>=0){
-                form.elements["time"].value = t2;
+                form.elements["time"].value = t1;
             }
             else if (t2>=0){
-                form.elements["time"].type = text;
-                var ttext = t1 + " or " + t2 + " choose wisely.";
-                form.elements["time"].value = ttext;
+                form.elements["time"].value = t2;
+                
             }
         }                
     }
