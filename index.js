@@ -45,9 +45,10 @@ function updateOutput(){
             }
         }
         else if (isNaN(t)){             //find time
-            var t1 = [(-vi+Math.sqrt.abs((vi**2)+2*a*dx))/a];
+            var tb = Math.abs((vi**2)+2*a*dx);
+            var t1 = [(-vi+Math.sqrt(tb))/a];
             var t1 = Math.round(t1*1000)/1000;
-            var t2 = [(-vi-Math.sqrt.abs((vi**2)+2*a*dx))/a];
+            var t2 = [(-vi-Math.sqrt(tb))/a];
             var t2 = Math.round(an*1000)/1000;
             if (t1>=0 && t2>=0){
                 form.elements["time"].type = text;
@@ -138,14 +139,16 @@ function updateOutput(){
             }
         }
         else if (isNaN(vi)){            //find initial velocity
-            var vin = [Math.sqrt.abs(v**2-2*a*dx)];
+            var vib = Math.abs(v**2-2*a*dx);
+            var vin = Math.sqrt(vib);
             var vin = Math.round(vin*1000)/1000;
             if (isFinite(vin)){
                 form.elements["vel0"].value = vin;
             }
         }
         else if (isNaN(v)){             //find velocity
-            var vn = [Math.sqrt.abs(vi**2+2*a*dx)];
+            var vnb = Math.abs(vi**2+2*a*dx)
+            var vn = Math.sqrt(vnb);
             var vn = Math.round(vn*1000)/1000;
             if (isFinite(vn)){
                 form.elements["vel"].value = v;
