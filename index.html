@@ -43,7 +43,11 @@
             <h5 style="margin-bottom: -10px;">Displacement:</h5><br>
             <input type="number" step="0.001" placeholder="m" class="form-control" id="displace" name="displace"><br>
             <h5 style="margin-bottom: -10px;">Initial Velocity:</h5><br>
-            <input type="number" step="0.001" placeholder="m/s" class="form-control" id="vel0" name="vel0"><br>
+            <input type="number" step="0.001" placeholder="m/s" class="form-control" id="vel0" name="vel0" list="vel0list">
+            <datalist id="vel0list">
+              <option value="0">
+            </datalist>
+            <br>
             <h5 style="margin-bottom: -10px;">Velocity:</h5><br>
             <input type="number" step="0.001" placeholder="m/s" class="form-control" id="vel" name="vel"><br>
             <h5 style="margin-bottom: -10px;">Acceleration:</h5><br>
