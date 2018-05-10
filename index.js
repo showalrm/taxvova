@@ -150,7 +150,7 @@ function updateOutput(){
             var vn = Math.sqrt(vnb);
             var vn = Math.round(vn*1000)/1000;
             if (isFinite(vn)){
-                form.elements["vel"].value = v;
+                form.elements["vel"].value = vn;
             }
         }
         else if (isNaN(dx)){            //find displacement
@@ -168,7 +168,7 @@ function updateOutput(){
             var vn = [dx/t];
             var vn = Math.round(vn*1000)/1000;
             if (isFinite(vn)){
-                alert('The velocity is '+vn+'m/s.');
+                form.elements["vel"].value = vn;
             }
         }
         else if (isNaN(dx)){            //find displacement
