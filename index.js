@@ -155,7 +155,7 @@ function updateOutput(){
             }
         }
         else if (isNaN(dx)){            //find displacement
-            var dxn = [(v**2-vi**2)/2*a];
+            var dxn = [(v**2-vi**2)/(2*a)];
             var dxn = Math.round(dxn*1000)/1000;
             if (isFinite(dxn)){
                 form.elements["displace"].value = dxn;
