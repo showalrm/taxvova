@@ -46,9 +46,9 @@ function updateOutput(){
         }
         else if (isNaN(t)){             //find time
             var tb = Math.abs((vi**2)+2*a*dx);
-            var t1 = [(-vi+Math.sqrt(tb))/a];
+            var t1 = [(-1*vi+Math.sqrt(tb))/a];
             var t1 = Math.round(t1*1000)/1000;
-            var t2 = [(-vi-Math.sqrt(tb))/a];
+            var t2 = [(-1*vi-Math.sqrt(tb))/a];
             var t2 = Math.round(an*1000)/1000;
             if (t1>=0 && t2>=0){
                 form.elements["time"].type = text;
@@ -163,7 +163,7 @@ function updateOutput(){
         }
     }
         
-    if (isNaN(vi) && isNaN(a)){       //in the absence of initial velocity and acceleration
+    if (isNaN(vi) && isNaN(a)){         //in the absence of initial velocity and acceleration
 
         if (isNaN(v)){                  //find velocity
             var vn = [dx/t];
