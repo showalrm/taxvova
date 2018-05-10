@@ -193,11 +193,12 @@ function updateOutput(){
         }
     }
 };
-function resetForm(){
-  var form = document.getElementById("inputform");
-  form.elements["time"].type = 'number';
-  form.elements["displace"].type = 'number';
-  form.elements["vel0"].type = 'number';
-  form.elements["vel"].type = 'number';
-  form.elements["accel"].type = 'number';
+
+function resetForm(){                   //resets form types to numbers
+    var form = document.getElementById("inputform");
+    form.elements["time"].type = 'number';
+    form.elements["displace"].type = 'number';
+    form.elements["vel0"].type = 'number';
+    form.elements["vel"].type = 'number';
+    form.elements["accel"].type = 'number';
 };
