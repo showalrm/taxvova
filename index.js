@@ -140,8 +140,8 @@ function updateOutput(){
         else if (isNaN(vi)){            //find initial velocity
             var vi1 = Math.sqrt(v**2-2*a*dx);
             var vi2 = -1*(Math.sqrt(v**2-2*a*dx));
-            var vi1 = Math.round(vin*1000)/1000;
-            var vi2 = Math.round(vin*1000)/1000;
+            var vi1 = Math.round(vi1*1000)/1000;
+            var vi2 = Math.round(vi2*1000)/1000;
             var vin = vi1+' or '+vi2+'; choose wisely';
             if (isFinite(vi1 && vi2)){
                 form.elements["vel0"].type = 'text';
