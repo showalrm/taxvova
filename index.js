@@ -45,11 +45,10 @@ function updateOutput(){
             }
         }
         else if (isNaN(t)){             //find time
-            var tb = Math.abs((vi**2)+2*a*dx);
-            var t1 = [(-1*vi+Math.sqrt(tb))/a];
+            var t1 = [(-1*vi+Math.sqrt(vi**2+2*a*dx))/a];
+            var t2 = [(-1*vi-Math.sqrt(vi**2+2*a*dx))/a];
             var t1 = Math.round(t1*1000)/1000;
-            var t2 = [(-1*vi-Math.sqrt(tb))/a];
-            var t2 = Math.round(an*1000)/1000;
+            var t2 = Math.round(t2*1000)/1000;
             if (t1>=0 && t2>=0){
                 form.elements["time"].type = text;
                 var ttext = t1 + " or " + t2 + "; choose wisely.";
