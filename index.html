@@ -2,7 +2,6 @@
 <!-- 
   index.html
   Taxvova Calculator
-
   Created by Ryan Showalter 04/20/2018
   Copyright © 2018 Dumb and Dumber Softworks
 -->
@@ -37,7 +36,7 @@
         <div class="col-md-8">
           <h3 style="margin-bottom: 20px;" class="text-center">Kinematic Equations</h3>
           <img src=/img/taxvovaeq.png alt="kinematic equations" class="center">
-          <form id="inputform" style="margin-bottom: 20px; margin-top: 20px;" class="center2" autocomplete="off" action="javascript:;">
+          <form id="inputform" style="margin-bottom: 20px; margin-top: 20px;" class="center2" autocomplete="off" action="javascript:;" onreset="resetForm()">
             <h5 style="margin-bottom: -10px;">Time:</h5><br>
             <input type="number" step="0.001" placeholder="s" class="form-control" id="time" min="0" name="time"><br>
             <h5 style="margin-bottom: -10px;">Displacement:</h5><br>
