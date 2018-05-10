@@ -50,8 +50,8 @@ function updateOutput(){
             var t1 = Math.round(t1*1000)/1000;
             var t2 = Math.round(t2*1000)/1000;
             if (t1>=0 && t2>=0){
-                form.elements["time"].type = text;
-                var ttext = t1 + " or " + t2 + "; choose wisely.";
+                form.elements["time"].type = 'text';
+                var ttext = t1 + " or " + t2 + "; choose wisely";
                 form.elements["time"].value = ttext;
             }
             else if (t1>=0){
@@ -138,19 +138,25 @@ function updateOutput(){
             }
         }
         else if (isNaN(vi)){            //find initial velocity
-            var vib = Math.abs(v**2-2*a*dx);
-            var vin = Math.sqrt(vib);
-            var vin = Math.round(vin*1000)/1000;
-            if (isFinite(vin)){
+            var vi1 = Math.sqrt(v**2-2*a*dx);
+            var vi2 = -1*(Math.sqrt(v**2-2*a*dx));
+            var vi1 = Math.round(vin*1000)/1000;
+            var vi2 = Math.round(vin*1000)/1000;
+            var vin = vi1+' or '+vi2+'; choose wisely';
+            if (isFinite(vi1 && vi2)){
+                form.elements["vel0"].type = 'text';
                 form.elements["vel0"].value = vin;
             }
         }
-        else if (isNaN(v)){             //find velocity
-            var vnb = Math.abs(vi**2+2*a*dx)
-            var vn = Math.sqrt(vnb);
-            var vn = Math.round(vn*1000)/1000;
-            if (isFinite(vn)){
-                form.elements["vel"].value = vn;
+        else if (isNaN(v)){             //find velocity 
+            var v1 = Math.sqrt(vi**2+2*a*dx);
+            var v2 = -1*(Math.sqrt(vi**2+2*a*dx));
+            var v1 = Math.round(v1*1000)/1000;
+            var v2 = Math.round(v2*1000)/1000;
+            var vn = v1+' or '+v2+'; choose wisely';
+            if (isFinite(v1 && v2)){
+                form.elements["vel"].type = 'text';
+                form.elements["vel"].value = vn
             }
         }
         else if (isNaN(dx)){            //find displacement
@@ -186,4 +192,12 @@ function updateOutput(){
             }
         }
     }
+};
+function resetForm(){
+  var form = document.getElementById("inputform");
+  form.elements["time"].type = 'number';
+  form.elements["displace"].type = 'number';
+  form.elements["vel0"].type = 'number';
+  form.elements["vel"].type = 'number';
+  form.elements["accel"].type = 'number';
 };
