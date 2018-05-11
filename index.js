@@ -117,7 +117,7 @@ function updateOutput(){
             
             var an = [(vin+v)/t];
             var an = Math.round(an*1000)/1000;
-            if (isFinite(an))[
+            if (isFinite(an)){
                 form.elements["accel"].value = an;
             }
         }
