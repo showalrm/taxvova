@@ -36,6 +36,11 @@ function updateOutput(){
             if(isFinite(vin)){
                 form.elements["vel0"].value = vin;
             }
+            var vn = [vin+(a*t)];
+            var vn = Math.round(vn*1000)/1000;
+            if(isFinite(vn)){
+                form.elements["vel"].value = vn;
+            }
         }
         else if (isNaN(dx)){             //find displacement
             var dxn = [(vi*t)+(0.5*a*t**2)];
@@ -78,6 +83,11 @@ function updateOutput(){
             var vin = Math.round(vin*1000)/1000;
             if (isFinite(vin)){
                 form.elements["vel0"].value = vin;
+            }
+            var dxn = [(vin*t)+(0.5*a*t**2)];
+            var dxn = Math.round(dxn*1000)/1000;
+            if (isFinite(dxn)){
+                form.elements["displace"].value = dxn;
             }
         }
         else if (isNaN(v)){             //find velocity
@@ -146,6 +156,22 @@ function updateOutput(){
             if (isFinite(vi1 && vi2)){
                 form.elements["vel0"].type = 'text';
                 form.elements["vel0"].value = vin;
+            }
+            
+            var tn1 = [(v-vi1)/a];
+            var tn2 = [(v-vi2)/a];
+            var tn1 = Math.round(tn1*1000)/1000;
+            var tn2 = Math.round(tn2*1000)/1000;
+            if (isFinite(tn1 && tn2)){
+                if (tn1 >= 0 && tn2 >= 0) {
+                    var tntext = tn1+' or '+tn2+'; choose wisely';
+                    form.elements["time"].type = 'text';
+                    form.elements["time"].value = tntext;
+                } else if (tn1 >= 0) {
+                    form.elements["time"].value = tn1;
+                } else if (tn2 >=0) {
+                    form.elements["time"].value = tn2;
+                }
             }
         }
         else if (isNaN(v)){             //find velocity 
