@@ -114,6 +114,12 @@ function updateOutput(){
             if (isFinite(vin)){
                 form.elements["vel0"].value = vin;
             }
+            
+            var an = [(vin+v)/t];
+            var an = Math.round(an*1000)/1000;
+            if (isFinite(an))[
+                form.elements["accel"].value = an;
+            }
         }
         else if (isNaN(v)){             //find velocity
             var vn = [(2*t*dx)-vi];
