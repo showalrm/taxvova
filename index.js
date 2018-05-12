@@ -12,15 +12,90 @@ var vi;
 var v;
 var a;
 
+var tunits = 0;
+function timeUnit(tunitselector) {
+  tunits = tunitselector;
+  if (tunits == 0) {
+    document.getElementById("time").placeholder = "s";
+  }
+  if (tunits == 1) {
+    document.getElementById("time").placeholder = "min";
+  }
+  if (tunits == 2) {
+    document.getElementById("time").placeholder = "hrs";
+  }
+}
+
+var dxunits = 0;
+function displacementUnit(dxunitselector) {
+  dxunits = dxunitselector;
+  if (dxunits == 0) {
+    document.getElementById("displace").placeholder = "m";
+  }
+  if (dxunits == 1) {
+    document.getElementById("displace").placeholder = "km";
+  }
+}
+
+var viunits = 0;
+function iVelocityUnit(viunitselector) {
+  viunits = viunitselector;
+  if (viunits == 0) {
+    document.getElementById("vel0").placeholder = "m/s";
+  }
+  if (viunits == 1) {
+    document.getElementById("vel0").placeholder = "km/h";
+  }
+}
+
+var vunits = 0;
+function velocityUnit(vunitselector) {
+  vunits = vunitselector;
+  if (vunits == 0) {
+    document.getElementById("vel").placeholder = "m/s";
+  }
+  if (vunits == 1) {
+    document.getElementById("vel").placeholder = "km/h";
+  }
+}
+
+var aunits = 0;
+function accelerationUnit(aunitselector) {
+  aunits = aunitselector;
+  if (aunits == 0) {
+    document.getElementById("accel").placeholder = "m/s²";
+  }
+}
+
 function updateOutput() {
   //grab the form values
   var form = document.getElementById("inputform");
-  var t = parseFloat(form.elements["time"].value);
-  var dx = parseFloat(form.elements["displace"].value);
-  var vi = parseFloat(form.elements["vel0"].value);
-  var v = parseFloat(form.elements["vel"].value);
-  var a = parseFloat(form.elements["accel"].value);
-  
+  t = parseFloat(form.elements["time"].value);
+  dx = parseFloat(form.elements["displace"].value);
+  vi = parseFloat(form.elements["vel0"].value);
+  v = parseFloat(form.elements["vel"].value);
+  a = parseFloat(form.elements["accel"].value);
+
+  if (tunits == 1) {
+    t = t * 60;
+  }
+
+  if (tunits == 2) {
+    t = t * 3600;
+  }
+
+  if (dxunits == 1) {
+    dx = dx * 1000;
+  }
+
+  if (viunits == 1) {
+    vi = vi * 0.277777;
+  }
+
+  if (vunits == 1) {
+    v = v * 0.277777;
+  }
+
   if (isNaN(vi) && isNaN(a)) {
     //in the absence of initial velocity and acceleration
 
@@ -266,4 +341,10 @@ function resetForm() {
   form.elements["vel0"].type = "number";
   form.elements["vel"].type = "number";
   form.elements["accel"].type = "number";
+  //resets unit selectors
+  $("#sec").trigger("click");
+  $("#meters").trigger("click");
+  $("#msi").trigger("click");
+  $("#ms").trigger("click");
+  $("#ms2").trigger("click");
 };
