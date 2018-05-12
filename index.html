@@ -13,6 +13,9 @@
   <meta name="description" content="Kinematic equation solver created by Dumb and Dumber Softworks&supR">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <link rel="icon" href="/img/favicon.gif" type="image/gif" />
   <script src="index.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +23,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118092643-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
+
     function gtag() {
       dataLayer.push(arguments);
     }
@@ -44,7 +48,7 @@
         <h1 class="text-center">Taxvova Calculator</h1>
         <h2 class="text-center"></h2>
         <h3 class="text-center"></h3>
-        <h4 class="text-center">The calculator portion of this website is in beta testing.</h4>
+        <h4 class="text-center">The calculator portion of this website is in beta testing.</br>All values returned will be strictly SI units, not km or km/h.</h4>
       </div>
       <div class="col-md-8">
         <h3 style="margin-bottom: 20px;" class="text-center">Kinematic Equations</h3>
@@ -52,16 +56,51 @@
         <form id="inputform" style="margin-bottom: 20px; margin-top: 20px;" class="center2" autocomplete="off" action="javascript:;" onreset="resetForm()">
           <h5 style="margin-bottom: -10px;">Time:</h5><br>
           <input type="number" step="any" placeholder="s" class="form-control" id="time" min="0" name="time"><br>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
+            <label class="btn btn-info active" onclick="timeUnit(0)">
+                <input type="radio" name="sec" id="sec">s
+              </label>
+            <label class="btn btn-info" onclick="timeUnit(1)">
+                <input type="radio" name="min" id="min">min
+              </label>
+            <label class="btn btn-info" onclick="timeUnit(2)">
+                <input type="radio" name="hr" id="hr">hrs
+              </label>
+          </div>
           <h5 style="margin-bottom: -10px;">Displacement:</h5><br>
           <input type="number" step="any" placeholder="m" class="form-control" id="displace" name="displace"><br>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px">
+            <label class="btn btn-info active" onclick="displacementUnit(0)">
+                <input type="radio" name="m" id="meters">m
+              </label>
+            <label class="btn btn-info" onclick="displacementUnit(1)">
+                <input type="radio" name="km" id="kilometers">km
+              </label>
+          </div>
           <h5 style="margin-bottom: -10px;">Initial Velocity:</h5><br>
           <input type="number" step="any" placeholder="m/s" class="form-control" id="vel0" name="vel0" list="vel0list">
           <datalist id="vel0list">
               <option value="0">
             </datalist>
           <br>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
+            <label class="btn btn-info active" onclick="iVelocityUnit(0)">
+                <input type="radio" name="msi" id="msi">m/s
+              </label>
+            <label class="btn btn-info" onclick="iVelocityUnit(1)">
+                <input type="radio" name="kmhi" id="kmhi">km/h
+              </label>
+          </div>
           <h5 style="margin-bottom: -10px;">Velocity:</h5><br>
           <input type="number" step="any" placeholder="m/s" class="form-control" id="vel" name="vel"><br>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
+            <label class="btn btn-info active" onclick="velocityUnit(0)">
+                <input type="radio" name="ms" id="ms">m/s
+              </label>
+            <label class="btn btn-info" onclick="velocityUnit(1)">
+                <input type="radio" name="kmh" id="kmh">km/h
+              </label>
+          </div>
           <h5 style="margin-bottom: -10px;">Acceleration:</h5><br>
           <input type="number" step="any" placeholder="m/s&sup2" class="form-control" id="accel" name="accel" list="accellist">
           <datalist id="accellist">
@@ -69,6 +108,12 @@
                <option value="-10">
             </datalist>
           <br>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
+            <label class="btn btn-info active" onclick="accelerationUnit(0)">
+                <input type="radio" name="ms2" id="ms2">m/s&sup2
+              </label>
+          </div>
+          </br>
           <button onclick="updateOutput()" class="btn btn-primary" style="margin-right: 5px;">Submit</button>
           <input type="reset" class="btn btn-success">
           <br>
