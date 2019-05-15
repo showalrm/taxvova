@@ -88,23 +88,23 @@
           <h5 style="margin-bottom: -10px;">Time:</h5><br>
           <input type="number" step="any" placeholder="s" class="form-control" id="time" min="0" name="time"><br>
           <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
-            <label class="btn btn-secondary active" onclick="timeUnit(0)">
+            <label id="time-seconds" class="btn btn-secondary active" onclick="timeUnit(0)">
                 <input type="radio" name="sec" id="sec">s
               </label>
-            <label class="btn btn-secondary" onclick="timeUnit(1)">
+            <label id="time-minutes" class="btn btn-secondary" onclick="timeUnit(1)">
                 <input type="radio" name="min" id="min">min
               </label>
-            <label class="btn btn-secondary" onclick="timeUnit(2)">
+            <label id="time-hours" class="btn btn-secondary" onclick="timeUnit(2)">
                 <input type="radio" name="hr" id="hr">hrs
               </label>
           </div>
           <h5 style="margin-bottom: -10px;">Displacement:</h5><br>
           <input type="number" step="any" placeholder="m" class="form-control" id="displace" name="displace"><br>
           <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px">
-            <label class="btn btn-secondary active" onclick="displacementUnit(0)">
+            <label id="displacement-meters" class="btn btn-secondary active" onclick="displacementUnit(0)">
                 <input type="radio" name="m" id="meters">m
               </label>
-            <label class="btn btn-secondary" onclick="displacementUnit(1)">
+            <label id="displacment-kilometers" class="btn btn-secondary" onclick="displacementUnit(1)">
                 <input type="radio" name="km" id="kilometers">km
               </label>
           </div>
@@ -115,20 +115,20 @@
             </datalist>
           <br>
           <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
-            <label class="btn btn-secondary active" onclick="iVelocityUnit(0)">
+            <label id="i-velocity-ms" class="btn btn-secondary active" onclick="iVelocityUnit(0)">
                 <input type="radio" name="msi" id="msi">m/s
               </label>
-            <label class="btn btn-secondary" onclick="iVelocityUnit(1)">
+            <label id="i-velocity-kmh" class="btn btn-secondary" onclick="iVelocityUnit(1)">
                 <input type="radio" name="kmhi" id="kmhi">km/h
               </label>
           </div>
           <h5 style="margin-bottom: -10px;">Velocity:</h5><br>
           <input type="number" step="any" placeholder="m/s" class="form-control" id="vel" name="vel"><br>
           <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom: 15px;">
-            <label class="btn btn-secondary active" onclick="velocityUnit(0)">
+            <label id="velocity-ms" class="btn btn-secondary active" onclick="velocityUnit(0)">
                 <input type="radio" name="ms" id="ms">m/s
               </label>
-            <label class="btn btn-secondary" onclick="velocityUnit(1)">
+            <label id="velocity-kmh" class="btn btn-secondary" onclick="velocityUnit(1)">
                 <input type="radio" name="kmh" id="kmh">km/h
               </label>
           </div>
@@ -145,8 +145,8 @@
               </label>
           </div>
           </br>
-          <button onclick="updateOutput()" class="btn btn-primary" style="margin-right: 5px;">Submit</button>
-          <input type="reset" class="btn btn-danger">
+          <button id="submit" onclick="updateOutput()" class="btn btn-primary" style="margin-right: 5px;">Submit</button>
+          <input id="reset" type="reset" class="btn btn-danger">
           <br>
           <output class="top20" id="output" name="output"></output>
         </form>
