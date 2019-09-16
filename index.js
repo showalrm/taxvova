@@ -237,7 +237,7 @@ function updateOutput() {
       }
     } else if (isNaN(v)) {
       //find velocity
-      var vn = [2 * t * dx - vi];
+      var vn = [(2 * dx)/t - vi];
 
       if (isFinite(vn)) {
         form.elements["vel"].value = vn;
